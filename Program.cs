@@ -76,7 +76,7 @@ namespace ConsoleApplication
         {
             
 
-            MailAddress from = new MailAddress("AppSupport@lebara.com", "AppSupport");
+            MailAddress from = new MailAddress("Someone@mail1.com", "SomeOne");
             MailAddress to = new MailAddress("info731408@ukr.net", "AppSupport");
             MailMessage message = new MailMessage(from, to);
             message.Subject = "Archive files";

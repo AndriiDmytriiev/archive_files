@@ -141,10 +141,7 @@ namespace ConsoleApplication
 
                             string newFile;
                                                         
-                            using (ZipArchive archive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
-                            {
-                                //archive.CreateEntryFromFile(newFile, "NewEntry.txt");
-                            }
+                            
                             DateTime TodayDate = DateTime.Now;
                             DateTime WeekAgo = TodayDate.AddDays(-7);
                             foreach (string file in Directory.EnumerateFiles(startPath, "*.*"))
@@ -189,28 +186,11 @@ namespace ConsoleApplication
                         extractPath = s;
                         string newFile;
 
-                       
-
-                        using (ZipArchive archive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
-                        {
-                            //archive.CreateEntryFromFile(newFile, "NewEntry.txt");
-                        }
                         DateTime TodayDate = DateTime.Now;
                         DateTime WeekAgo = TodayDate.AddDays(-7);
                         foreach (string file in Directory.EnumerateFiles(startPath, "*.*"))
                         {
                             newFile = file;
-
-
-                            //if (Directory.Exists("FOLDER_PATH"))
-                            //{
-                            //    var directory = new DirectoryInfo("FOLDER_PATH");
-                            //    foreach (FileInfo file1 in directory.GetFiles())
-                            //    {
-                            //        if (!IsFileLocked(file1)) file1.Delete();
-                            //    }
-                            //}
-
 
                             using (ZipArchive archive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
                             {
@@ -222,11 +202,7 @@ namespace ConsoleApplication
 
                                 result = Path.GetFileName(fileName);
                                 DateTime fileCreatedDate = File.GetLastWriteTime(fileName);
-                                //string str = null;
-                                //string retString = null;
-
-                                //retString = fileName.Substring(fileName.Length - startPath.Length-2);
-                                //retString = str.Substring(0, 3);
+                               
                                 if (fileCreatedDate < WeekAgo)
 
                                 {
@@ -234,10 +210,6 @@ namespace ConsoleApplication
                                    // foreach (FileInfo file1 in directory.GetFiles())
                                     {
                                         
-                                        
-                                        //if (!IsFileLocked(file1) //&& (result ==file1.ToString()))
-
-                                        //file1.Delete();
                                         {
                                             long length = new System.IO.FileInfo(file).Length;
                                             if (length < 300000000)
